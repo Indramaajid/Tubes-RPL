@@ -32,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
                 if (ed1.getText().toString().equals("iin") &&
                         ed2.getText().toString().equals("iin")) {
                     Toast.makeText(getApplicationContext(),
-                            "Redirecting...", Toast.LENGTH_SHORT).show();
+                            "I Will Redirect you To The Application...", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getApplicationContext(),
-                            "Wrong Password", Toast.LENGTH_SHORT).show();
+                            "I Think Your Username Or Password Is Wrong", Toast.LENGTH_SHORT).show();
                     tx1.setVisibility(View.VISIBLE);
                     tx1.setBackgroundColor(Color.RED);
                     counter--;
