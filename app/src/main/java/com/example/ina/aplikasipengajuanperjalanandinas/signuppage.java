@@ -47,6 +47,9 @@ public class signuppage extends AppCompatActivity {
                     startActivity(i);
                 }
                 break;
+            case R.id.back2:
+                i = new Intent(this, MainActivity.class);
+                startActivity(i);
         }
     }
 

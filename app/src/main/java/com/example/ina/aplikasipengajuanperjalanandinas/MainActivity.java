@@ -1,6 +1,8 @@
 package com.example.ina.aplikasipengajuanperjalanandinas;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     TextView tx1;
     int counter = 3;
     SQLiteDatabase db = null;
+    String var_user;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +52,10 @@ public class MainActivity extends AppCompatActivity {
                     Cursor c = db.rawQuery("select * from login where id='" + id1 + "' and pass='" + pass1 + "'", null);
                     c.moveToFirst();
                     if (c.getCount() > 0) {
+                        Bundle b = new Bundle();
+                        b.putString("name", id1);
                         i = new Intent(this, homepage.class);
+                        i.putExtras(b);
                         startActivityForResult(i, 500);
                         db.close();
                         finish();
